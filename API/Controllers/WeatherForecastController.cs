@@ -25,6 +25,7 @@ namespace API.Controllers
         }
         [Authorize]
         [HttpGet("GetWeatherForecast")]
+        [EndpointSummary("Get weather forecast")]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -37,6 +38,7 @@ namespace API.Controllers
         }
         [AllowAnonymous]
         [HttpPost("CreateKey")]
+        [EndpointSummary("Create JWT key here")]
         public string CreateJWTKey(string email)
         {
             var key = Encoding.ASCII.GetBytes("3LanLotVaoDoiHinhNguNhatWC2010-2014-2022");
